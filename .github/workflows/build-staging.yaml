@@ -51,15 +51,12 @@ jobs:
 
       - name: Run Helm Deploy
         run: |
-          echo ${{ secrets.ACR_NAME }} &&
-          echo ${{ secrets.DNS_NAME }} &&
           helm upgrade \
             --install \
+            contoso-website ./kubernetes/contoso-website \ 
             --create-namespace \
+            --namespace staging \
             --atomic \
             --wait \
-            --namespace staging \
-            contoso-website \
-            ./kubernetes/contoso-website \
             --set image.repository=${{ secrets.ACR_NAME }} \
             --set dns.name=${{ secrets.DNS_NAME }}
