@@ -53,12 +53,11 @@ jobs:
         run: |
           helm upgrade \
             --install \
+            --force \
             --create-namespace \
             --atomic \
             --wait \
-            --force \
             --namespace staging \
             contoso-website \
             ./kubernetes/contoso-website \
-            --set image.repository=${{ secrets.ACR_NAME }} \
             --set dns.name=${{ secrets.DNS_NAME }}
