@@ -1,5 +1,5 @@
 image:
-  registry: ContosoContainerRegistry4543
+  registry: contosocontainerregistry4543
   name: contoso-website
   tag: latest
 
