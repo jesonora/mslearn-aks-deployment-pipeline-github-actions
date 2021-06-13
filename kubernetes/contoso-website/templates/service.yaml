@@ -6,9 +6,6 @@ metadata:
 spec:
   ports:
     - port: 80
-      protocol: TCP
-      targetPort: http
-      name: http
   selector:
     app: contoso-website
-  type: ClusterIP
+  type: LoadBalancer
