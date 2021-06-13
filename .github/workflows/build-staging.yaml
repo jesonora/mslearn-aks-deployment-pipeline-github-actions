@@ -52,7 +52,8 @@ jobs:
       - name: Run Helm Deploy
         run: |
           helm upgrade \
-            contoso-website ./kubernetes/contoso-website \ 
+            contoso-website \
+            ./kubernetes/contoso-website \ 
             --install \
             --create-namespace \
             --namespace staging \
